@@ -1,37 +1,5 @@
 import openpyxl
 from openpyxl import load_workbook
-import duckdb
-import spatial
-import pyfiglet 
-import time     
-import os
-import platform
-
-
-fileName='all (6).xlsx'
-lang='영어' # 한글 or 영어
-
-
-
-from datetime import datetime
-now = datetime.now()
-formatted = now.strftime("%Y%m%d_%H%M%S")
-
-system_info = platform.system()  # 'Linux', 'Windows', 'Darwin'
-print(system_info)
-
-if(system_info == 'Windows'):
-    os.system("cls")
-else:
-    os.system("clear")
-
-result = pyfiglet.figlet_format("Trusted Advisor") 
-print(result)
-
-time.sleep(3)
-
-if not os.path.exists('output'):import openpyxl
-from openpyxl import load_workbook
 import warnings
 warnings.filterwarnings("ignore")
 import duckdb
@@ -45,7 +13,7 @@ import pandas as pd
 #%matplotlib inline
 
 fileName='all (5).xlsx'
-lang='영어' # 한글 or 영어
+lang='한글' # 한글 or 영어
 
 from datetime import datetime
 now = datetime.now()
