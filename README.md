@@ -4,7 +4,7 @@
 ![ALT TEXT](pic/ta1.png)
 
 #### 2. Edit filename in ta.py or ta.ipynb<br>
-   fileName='all (5).xlsx'<br>
-   lang='한글' # 한글 or 영어
+     fileName='all (5).xlsx'<br>
+     lang='한글' # 한글 or 영어
 
   
