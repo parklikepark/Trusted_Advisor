@@ -159,7 +159,25 @@ df2=conn.sql("""
          """).to_df()
 df2
 
-writer = pd.ExcelWriter('./output/all_out_'+formatted+'.xlsx') 
+
+writer = pd.ExcelWriter('./output/all_out_'+formatted+'.xlsx')
+df.to_excel(writer, sheet_name='통계',  na_rep='NaN',float_format = "%.2f",
+             header = True,
+             #columns = ["group", "value_1", "value_2"], # if header is False
+             index = False,
+             #index_label = "id",
+             #startrow = 1,
+             #startcol = 1,
+             #engine = 'xlsxwriter',
+             freeze_panes = (1, 0))
+
+for column in df:
+    column_width = max(df[column].astype(str).map(len).max(), len(column))
+    col_idx = df.columns.get_loc(column)
+    writer.sheets['통계'].set_column(col_idx, col_idx, column_width)
+
+
+#writer = pd.ExcelWriter('./output/all_out_'+formatted+'.xlsx') 
 df2.to_excel(writer, sheet_name='recommdations',  na_rep='NaN',float_format = "%.2f",
              header = True,
              #columns = ["group", "value_1", "value_2"], # if header is False
